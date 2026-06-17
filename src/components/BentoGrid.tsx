@@ -35,9 +35,16 @@ export const BentoGrid = () => (
           <p className="text-[#9e9890] text-sm font-light mt-4">Sem taxa de serviço e sem couvert artístico nos dias de música ao vivo. Só o prazer de comer muito bem pelo preço justo.</p>
         </div>
 
-        <div className="bg-[#1c1b1b] border border-[#2e2b27]/30 rounded-xl p-6 flex flex-col items-center justify-center text-center gap-4 group hover:bg-[#b8973e] transition-all duration-500">
-          <Users className="text-[#c9a96e] group-hover:text-[#e5e2e1] transition-colors" size={28} />
-          <span className="font-bold text-[9px] uppercase tracking-[0.3em] text-[#e8dfc8] group-hover:text-[#e5e2e1]">Área Kids</span>
+        <div className="border border-[#2e2b27]/30 rounded-xl flex flex-col justify-end text-center group transition-all duration-500 relative overflow-hidden min-h-[160px]">
+          <img
+            src="/area-kids.PNG"
+            alt="Área Kids"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="relative z-10 flex flex-row items-center justify-center gap-2 px-4 py-4 bg-black/60 w-full">
+            <Users className="text-[#c9a96e]" size={22} />
+            <span className="font-bold text-[9px] uppercase tracking-[0.3em] text-[#e8dfc8]">Área Kids</span>
+          </div>
         </div>
 
         <div className="bg-[#2a2a2a] rounded-xl p-6 flex flex-col items-center justify-center text-center gap-4 relative overflow-hidden group">
