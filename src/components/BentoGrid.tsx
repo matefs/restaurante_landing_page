@@ -32,9 +32,8 @@ export const BentoGrid = () => (
         {/* Main card */}
         <motion.div className="md:col-span-2 md:row-span-2" {...fadeUp(0.05)}>
           <div className="h-full" style={{ background: goldBorder, padding: '1.5px', borderRadius: '13px' }}>
-            <div className="bg-[#b8973e] rounded-xl p-6 md:p-10 flex flex-col justify-between overflow-hidden relative group h-full">
-              <img src="/Fotos%20pro_/IMG_1902.jpg" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover opacity-20" />
-              <Lightspot color="rgba(255,255,255,0.16)" position="20% 10%" />
+            <div className="bg-[#1c1b1b] rounded-xl p-6 md:p-10 flex flex-col justify-between overflow-hidden relative group h-full">
+              <img src="/Fotos%20pro_/IMG_1902.jpg" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover opacity-50" />
               <div className="relative z-10">
                 <div className="w-12 h-12 bg-[#c9a96e] flex items-center justify-center rounded-lg mb-6">
                   <Beef className="text-white" size={24} />
@@ -87,9 +86,7 @@ export const BentoGrid = () => (
         <motion.div {...fadeUp(0.26)}>
           <div className="h-full" style={{ background: goldBorder, padding: '1.5px', borderRadius: '13px' }}>
             <div className="rounded-xl p-6 flex flex-col items-center justify-center text-center gap-4 relative overflow-hidden group h-full" style={{ minHeight: '160px' }}>
-              <img src="/ambiente_vantaggio.jpg" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover opacity-40" />
-              <div className="absolute inset-0 bg-[#0d0c0b]/50" />
-              <Lightspot color="rgba(201,169,110,0.22)" position="50% 0%" />
+              <img src="/ambiente_vantaggio.jpg" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover opacity-70" />
               <Music className="text-[#e8dfc8] relative z-10" size={28} />
               <span className="font-bold text-[9px] uppercase tracking-[0.3em] text-[#e8dfc8] relative z-10">Música ao Vivo</span>
             </div>
