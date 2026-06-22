@@ -1,6 +1,7 @@
-﻿import { useRef } from 'react';
+import { useRef } from 'react';
 import { MoveLeft, MoveRight } from 'lucide-react';
 import { SectionTag } from './ui/SectionTag';
+import { Reveal } from './ui/Reveal';
 
 const steps = [
   {
@@ -24,8 +25,8 @@ const steps = [
   {
     t: "Ambiente",
     d: "Salão climatizado, música ao vivo em dias selecionados e área kids. O lugar ideal para toda a família curtir juntos.",
-    s: "/Fotos%20pro_/IMG_2291.jpg",
-    alt: "Drinks e coquetéis especiais do Vantaggio Restaurante em Canasvieiras",
+    s: "/ambiente_vantaggio.jpg",
+    alt: "Ambiente do Vantaggio Restaurante em Canasvieiras",
   },
 ];
 
@@ -35,14 +36,13 @@ export const MasteryCarousel = () => {
   const scroll = (direction: 'left' | 'right') => {
     if (scrollRef.current) {
       const { scrollLeft, clientWidth } = scrollRef.current;
-      const scrollTo = direction === 'left' ? scrollLeft - clientWidth : scrollLeft + clientWidth;
-      scrollRef.current.scrollTo({ left: scrollTo, behavior: 'smooth' });
+      scrollRef.current.scrollTo({ left: direction === 'left' ? scrollLeft - clientWidth : scrollLeft + clientWidth, behavior: 'smooth' });
     }
   };
 
   return (
     <section id="cardapio" className="py-24 bg-[#201f1f] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 md:px-16 mb-12 flex justify-between items-end">
+      <Reveal className="max-w-7xl mx-auto px-6 md:px-16 mb-12 flex justify-between items-end">
         <div>
           <SectionTag>Cardápio</SectionTag>
           <h2 className="text-5xl font-serif font-bold text-[#e8dfc8] mt-4">O Rodízio Triplo</h2>
@@ -55,18 +55,26 @@ export const MasteryCarousel = () => {
             <MoveRight size={20} />
           </button>
         </div>
-      </div>
+      </Reveal>
 
-      <div
-        ref={scrollRef}
-        className="flex gap-6 px-6 md:px-16 overflow-x-auto no-scrollbar scroll-smooth pb-12"
-      >
+      <div ref={scrollRef} className="flex gap-6 px-6 md:px-16 overflow-x-auto no-scrollbar scroll-smooth pb-12">
         {steps.map((step, i) => (
-          <div key={i} className="min-w-[300px] md:min-w-[450px] group bg-[#1c1b1b] rounded-xl overflow-hidden shadow-sm border border-[#2e2b27]/20">
-            <div className="aspect-[16/10] overflow-hidden">
-              <img src={step.s} alt={step.alt} loading="lazy" decoding="async" className="w-full h-full object-cover transition-all duration-700 scale-105 group-hover:scale-100" />
+          <div
+            key={i}
+            className="min-w-[300px] md:min-w-[450px] shrink-0 group bg-[#1c1b1b] rounded-xl overflow-hidden relative"
+            style={{ boxShadow: '0 0 0 1.5px rgba(201,169,110,0.5), 0 0 28px rgba(201,169,110,0.12)' }}
+          >
+            <div
+              className="absolute inset-0 pointer-events-none z-10"
+              style={{ background: 'radial-gradient(circle at 70% 55%, rgba(201,169,110,0.32) 0%, rgba(201,169,110,0.08) 40%, transparent 65%)' }}
+            />
+            <div style={{ height: '260px', overflow: 'hidden' }}>
+              <img
+                src={step.s} alt={step.alt} loading="lazy" decoding="async"
+                style={{ width: '100%', height: '260px', objectFit: 'cover', objectPosition: 'center 10%', display: 'block' }}
+              />
             </div>
-            <div className="p-8">
+            <div className="p-8 relative z-20">
               <span className="text-[9px] font-bold uppercase tracking-widest text-[#c9a96e] mb-2 block">0{i + 1}</span>
               <h3 className="text-2xl font-serif text-[#e8dfc8] mb-3">{step.t}</h3>
               <p className="text-[#9e9890] font-light text-sm leading-relaxed">{step.d}</p>

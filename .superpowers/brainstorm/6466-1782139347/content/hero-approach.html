@@ -1,0 +1,45 @@
+<h2>Como fazer o hambúrguer 3D no Hero?</h2>
+<p class="subtitle">O hero atual tem texto à esquerda + foto à direita. A ideia é centralizar o texto e colocar o hambúrguer 3D ao fundo.</p>
+
+<div class="options">
+  <div class="option" data-choice="css3d" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>CSS 3D — Hambúrguer em camadas</h3>
+      <p>Hambúrguer construído com <code>div</code>s e <code>transform 3D</code> em CSS puro. Leve, sem dependências novas. Gira suavemente com animação CSS. Visual estilizado/artístico, não fotorrealista.</p>
+      <div class="pros-cons">
+        <div class="pros"><h4>Prós</h4><ul><li>Zero dependências extras</li><li>Performance excelente</li><li>Totalmente customizável</li></ul></div>
+        <div class="cons"><h4>Contras</h4><ul><li>Visual limitado (não fotorrealista)</li><li>Mais difícil de parecer "premium"</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="r3f" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>React Three Fiber — 3D real com WebGL</h3>
+      <p>Hambúrguer 3D verdadeiro, com iluminação, sombras e materiais realistas. Pode girar, flutuar e reagir ao scroll. Requer adicionar <code>@react-three/fiber</code> (~300 KB).</p>
+      <div class="pros-cons">
+        <div class="pros"><h4>Prós</h4><ul><li>Visual mais impressionante</li><li>Controle total da cena</li><li>Animações suaves e interativas</li></ul></div>
+        <div class="cons"><h4>Contras</h4><ul><li>+300KB no bundle</li><li>Mais complexo de implementar</li><li>Pode impactar performance mobile</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="spline" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>Spline — Cena 3D embarcada (iframe)</h3>
+      <p>Criar o hambúrguer no Spline (ferramenta online) e embutir na página via <code>&lt;iframe&gt;</code> ou SDK. Visual profissional, mais fácil de criar. Depende de serviço externo.</p>
+      <div class="pros-cons">
+        <div class="pros"><h4>Prós</h4><ul><li>Visual profissional rápido</li><li>Editor visual fácil</li></ul></div>
+        <div class="cons"><h4>Contras</h4><ul><li>Depende de serviço externo</li><li>Você precisaria criar a cena no Spline</li><li>iframe pode ter limitações de estilo</li></ul></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="margin-top:2rem;padding:1rem;background:rgba(255,255,255,0.05);border-radius:8px;border-left:3px solid #c9a96e;">
+  <p style="margin:0;color:#c9a96e;font-size:0.85rem;font-weight:600;">Minha recomendação: Opção A (CSS 3D)</p>
+  <p style="margin:0.5rem 0 0;font-size:0.8rem;color:#aaa;">Zero dependências novas, visual estilizado que combina com a identidade premium do restaurante, e performance garantida em mobile. Com as cores douradas (#c9a96e) e uma animação de rotação lenta, vai parecer muito mais luxuoso do que um simples círculo verde.</p>
+</div>

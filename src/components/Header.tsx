@@ -16,7 +16,19 @@ export const Header = ({ setIsDrawerOpen }: HeaderProps) => {
   }, []);
 
   return (
-    <header className={`fixed top-0 w-full z-50 transition-all duration-500 px-6 md:px-16 py-5 flex justify-between items-center ${scrolled ? 'bg-[#131313]/90 backdrop-blur-xl border-b border-[#2e2b27]/40 shadow-sm' : 'bg-transparent'}`}>
+    <header
+      className="fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-7xl z-50 transition-all duration-500 px-6 md:px-16 py-5 flex justify-between items-center rounded-2xl"
+      style={{
+        border: '1px solid transparent',
+        ...(scrolled ? {
+          background: 'rgba(15, 12, 10, 0.45)',
+          backdropFilter: 'blur(28px) saturate(160%)',
+          WebkitBackdropFilter: 'blur(28px) saturate(160%)',
+          borderColor: 'rgba(201,169,110,0.10)',
+          boxShadow: '0 8px 40px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.04)',
+        } : {}),
+      }}
+    >
       <div className="flex items-center gap-6">
         <button onClick={() => setIsDrawerOpen(true)} className="p-2 -ml-2 lg:hidden text-[#e8dfc8]">
           <Menu size={24} />

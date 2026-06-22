@@ -11,11 +11,25 @@
 
 .no-scrollbar::-webkit-scrollbar{display:none}
 
+::-webkit-scrollbar { width: 8px; height: 8px; background: #0d0c0b; }
+::-webkit-scrollbar-track { background: #0d0c0b; }
+::-webkit-scrollbar-thumb { background: #2e2b27; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #c9a96e; }
+* { scrollbar-color: #2e2b27 #0d0c0b; scrollbar-width: thin; }
+
 @keyframes marquee {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 .animate-marquee { animation: marquee 30s linear infinite; }
+
+@keyframes burger-float {
+  0%   { transform: rotateX(22deg) rotateY(-28deg) translateY(0px)   scale(1); }
+  25%  { transform: rotateX(24deg) rotateY(-24deg) translateY(-8px)  scale(1.01); }
+  50%  { transform: rotateX(21deg) rotateY(-30deg) translateY(-16px) scale(1.02); }
+  75%  { transform: rotateX(23deg) rotateY(-26deg) translateY(-8px)  scale(1.01); }
+  100% { transform: rotateX(22deg) rotateY(-28deg) translateY(0px)   scale(1); }
+}
 
 .golden-button {
   touch-action: manipulation;
