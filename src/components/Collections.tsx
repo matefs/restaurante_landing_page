@@ -11,7 +11,7 @@ const CollectionCard = ({
   title: string; description?: string; children?: React.ReactNode;
 }) => (
   <div style={{ background: gradientBorder, padding: '1.5px', borderRadius: '13px', flex: 1 }}>
-    <div className="group relative overflow-hidden rounded-xl h-[380px] md:h-[500px] bg-[#1a1917] w-full h-full">
+    <div className="group relative overflow-hidden rounded-xl h-[380px] md:h-[500px] bg-[#1a1917] w-full">
       <img
         src={src} loading="lazy" decoding="async"
         className="w-full h-full object-cover opacity-85 group-hover:scale-105 transition-transform duration-[2s]"

@@ -57,24 +57,25 @@ export const MasteryCarousel = () => {
         </div>
       </Reveal>
 
-      <div ref={scrollRef} className="flex gap-6 px-6 md:px-16 overflow-x-auto no-scrollbar scroll-smooth pb-12">
+      <div ref={scrollRef} className="flex flex-col md:flex-row gap-6 px-6 md:px-16 md:overflow-x-auto no-scrollbar scroll-smooth pb-12">
         {steps.map((step, i) => (
           <div
             key={i}
-            className="min-w-[300px] md:min-w-[450px] shrink-0 group bg-[#1c1b1b] rounded-xl overflow-hidden relative"
+            className="w-full md:w-auto md:min-w-[450px] md:shrink-0 group bg-[#1c1b1b] rounded-xl overflow-hidden relative"
             style={{ boxShadow: '0 0 0 1.5px rgba(201,169,110,0.5), 0 0 28px rgba(201,169,110,0.12)' }}
           >
             <div
               className="absolute inset-0 pointer-events-none z-10"
               style={{ background: 'radial-gradient(circle at 70% 55%, rgba(201,169,110,0.32) 0%, rgba(201,169,110,0.08) 40%, transparent 65%)' }}
             />
-            <div style={{ height: '260px', overflow: 'hidden' }}>
+            <div className="h-[220px] md:h-[260px] overflow-hidden">
               <img
                 src={step.s} alt={step.alt} loading="lazy" decoding="async"
-                style={{ width: '100%', height: '260px', objectFit: 'cover', objectPosition: 'center 10%', display: 'block' }}
+                className="w-full h-[220px] md:h-[260px] object-cover block"
+                style={{ objectPosition: 'center 10%' }}
               />
             </div>
-            <div className="p-8 relative z-20">
+            <div className="p-6 md:p-8 relative z-20">
               <span className="text-[9px] font-bold uppercase tracking-widest text-[#c9a96e] mb-2 block">0{i + 1}</span>
               <h3 className="text-2xl font-serif text-[#e8dfc8] mb-3">{step.t}</h3>
               <p className="text-[#9e9890] font-light text-sm leading-relaxed">{step.d}</p>
